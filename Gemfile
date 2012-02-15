@@ -12,6 +12,8 @@ gem 'haml-rails'
 gem 'html5-rails'
 gem 'simple_form' #, :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'country_select'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :test, :development do
   gem 'turn', '< 0.8.3'
@@ -22,6 +24,7 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'guard-rspec'
   gem 'mongrel', '1.2.0.pre2'
+  gem 'forgery'
 end
 
 # Gems used only for assets and not required

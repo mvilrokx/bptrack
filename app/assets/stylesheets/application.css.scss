@@ -12,18 +12,23 @@
 // Compass libraries and extensions
 //-----------------------------------------
 // @import "compass/**/*";
+@import "compass/utilities";
+@import "compass/css3";
+@import "blueprint";
+@import "blueprint/liquid";
 @import "h5bp";
+@import "compass_twitter_bootstrap";
 
 //-----------------------------------------
 // Html5 Boilerplate normalize.css
 //-----------------------------------------
-@include h5bp-normalize;
+// @include h5bp-normalize;
 
 //-----------------------------------------
 // Import all your custom partials below
 //-----------------------------------------
 @import "application/document";
-
+@import "application/footer";
 
 
 //-----------------------------------------

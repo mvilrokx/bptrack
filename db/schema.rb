@@ -11,6 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120215064239) do
+
+  create_table "bloodpressure_readings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "systolic_pressure"
+    t.integer  "diastolic_pressure"
+    t.integer  "heart_rate"
+    t.text     "comment"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
 end

@@ -6,6 +6,8 @@
   %body{ :class => "#{ controller.controller_name }" }
     = render "header"
 
+    = render "menu"
+
     #main{ :role => "main" }
       = render "flashes"
       = yield

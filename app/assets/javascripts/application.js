@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require h5bp
-
+//= require bootstrap-alert
+//= require bootstrap-button
+//= require bootstrap-transition
+//= require bootstrap-dropdown
+//= require_tree .
