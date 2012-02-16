@@ -1,4 +1,10 @@
 Bptrack::Application.routes.draw do
+  get "authorizations/destroy"
+
+  get "users/edit"
+
+  get "users/update"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -15,6 +21,8 @@ Bptrack::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :bloodpressure_readings
+  resources :users
+  resources :authorizations
 
   # Sample resource route with options:
   #   resources :products do

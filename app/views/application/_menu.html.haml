@@ -9,8 +9,15 @@
             %li= link_to "MyBP", bloodpressure_readings_path
 
         %ul.nav.pull-right
-          - if logged_in?
-            %li= link_to "Account", root_path
-            %li= link_to "Sign Out", signout_path
-          - else
-            %li= link_to "Sign In", "/auth/twitter"
+          %li.dropdown
+            %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}} 
+              Account
+              %b.caret
+            %ul.dropdown-menu
+              - if logged_in?
+                %li= link_to "Profile", edit_user_path
+                %li= link_to "Sign Out", signout_path
+              - else
+                %li= link_to "Sign In with Twitter", "/auth/twitter"
+                %li= link_to "Sign In with Facebook", "/auth/facebook"
+                %li= link_to "Sign In with Google", "/auth/google_oauth2"

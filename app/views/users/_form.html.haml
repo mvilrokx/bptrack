@@ -1,0 +1,20 @@
+.form[current_user]
+  = simple_form_for current_user, :html => {:class => 'form-horizontal'}, :defaults => {:input_html => {:class => 'span2'}} do |f|
+    - if f.error_notification
+      .alert.alert-error.fade.in
+        %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
+        = f.error_notification
+
+    %legend Edit Account
+    = f.input :user_name, :disabled => true, :hint => 'You cannot change your user name.'
+    = f.input :email, :placeholder => 'user@domain.com', :as => :email
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :birth_date, :order => [:day, :month, :year], :start_year => Time.now.year-110, :end_year => Time.now.year
+    = f.input :gender, :collection => [:male, :female]
+    = f.input :mobile_phone
+    .form-actions
+      = f.button :submit, :class => 'btn-primary', :disable_with => "Saving...", :value => "Save"
+      = link_to 'Cancel', bloodpressure_readings_path, :class => "btn btn-danger"
+
+= render "authorizations"

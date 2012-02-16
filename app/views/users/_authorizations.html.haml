@@ -1,0 +1,11 @@
+#authorizations
+  %table.table.table-striped[current_user]
+    %thead
+      %tr
+        %th Provider
+        %th Action
+    %tbody
+      - current_user.authorizations.each do |auth|
+        %tr[auth]
+          %td= auth.provider
+          %td= link_to "Delete", authorization_path(auth), :method => :delete, :confirm => "Are you sure?"

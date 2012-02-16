@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   
   def create
     auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
+    authorization = Authorization.find_with_omniauth(auth) || Authorization.create_with_omniauth(auth, current_user)
+    session[:user_id] = authorization.user
     redirect_to bloodpressure_readings_path, :flash => {:success => "Signed in succesfully with your #{auth["provider"]} account."}
   end
 

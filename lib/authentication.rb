@@ -16,7 +16,7 @@
 #   before_filter :login_required, :except => [:index, :show]
 module Authentication
   def self.included(controller)
-     controller.send :helper_method, :current_user, :logged_in?, :working_on_iteration?, :redirect_to_target_or_default
+     controller.send :helper_method, :current_user, :logged_in?, :redirect_to_target_or_default
   end
 
   def current_user
