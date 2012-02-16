@@ -1,0 +1,16 @@
+.form[@bp_reading]
+  = simple_form_for @bp_reading, :html => {:class => 'form-horizontal'}, :defaults => {:input_html => {:class => 'row-fluid span1'}} do |f|
+    - if f.error_notification
+      .alert.alert-error.fade.in
+        %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
+        = f.error_notification
+
+    %legend #{@bp_reading.new_record? ? "Create" : "Edit"} Bloodpressure Reading
+    = f.input :systolic_pressure, :placeholder => 'e.g. 115'
+    = f.input :diastolic_pressure, :placeholder => 'e.g. 75'
+    = f.input :heart_rate
+    = f.input :comment, :input_html => { :class => 'span6', :rows => 6 }
+
+    .form-actions
+      = f.button :submit, :class => 'btn-primary', :disable_with => "Saving...", :value => "Save"
+      = link_to 'Cancel', :back, :class => "btn btn-danger"

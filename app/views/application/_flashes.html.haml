@@ -1,5 +1,6 @@
 #flash
   - flash.each do |key, value|
-    .wrapper
-      %div{ :title => key.to_s.humanize, :class => key }
-        %p= value
+    %div.alert.fade.in{:class => "alert-#{key}"}
+      %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
+      - flash.each do |key, value|
+        = value

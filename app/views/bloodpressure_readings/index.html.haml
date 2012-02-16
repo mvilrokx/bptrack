@@ -8,6 +8,7 @@
       %th Systolic
       %th Diatolic
       %th Heart Rate
+      %th= sortable @bp_readings, "updated_at", "Date Entered"
       %th Comment
       %th Action
   %tbody
@@ -16,6 +17,7 @@
       %td= bp_reading.systolic_pressure
       %td= bp_reading.diastolic_pressure
       %td= bp_reading.heart_rate
+      %td= pretty_date bp_reading.created_at
       %td= bp_reading.comment
       %td
         .btn-group
@@ -25,3 +27,5 @@
           %ul.dropdown-menu
             %li= link_to "Edit", edit_bloodpressure_reading_path(bp_reading)
             %li= link_to "Delete", bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
+
+=link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary"

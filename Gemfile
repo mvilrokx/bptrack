@@ -10,10 +10,11 @@ gem 'awesome_print'
 gem 'newrelic_rpm'
 gem 'haml-rails'
 gem 'html5-rails'
-gem 'simple_form' #, :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'country_select'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'omniauth-twitter'
 
 group :test, :development do
   gem 'turn', '< 0.8.3'
