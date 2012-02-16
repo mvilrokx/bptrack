@@ -1,4 +1,6 @@
 class BloodpressureReading < ActiveRecord::Base
+  belongs_to :user
+
   validates :systolic_pressure, :diastolic_pressure, :heart_rate,
     :numericality => { :only_integer => true }, :allow_blank => true
 

@@ -36,9 +36,11 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     ansi (1.4.2)
     arel (3.0.0)
     awesome_print (1.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.0)
@@ -91,6 +93,10 @@ GEM
     factory_girl_rails (1.6.0)
       factory_girl (~> 2.5.0)
       railties (>= 3.0.0)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
     ffi (1.0.11)
     forgery (0.5.0)
     fssm (0.2.8.1)
@@ -130,15 +136,29 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     multi_json (1.0.4)
+    multipart-post (1.1.5)
     mysql2 (0.3.11)
     newrelic_rpm (3.3.1)
     nokogiri (1.5.0)
     oauth (0.4.5)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
     omniauth (1.0.2)
       hashie (~> 1.2)
       rack
+    omniauth-facebook (1.2.0)
+      omniauth-oauth2 (~> 1.0.0)
+    omniauth-google-oauth2 (0.1.9)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-identity (1.0.0)
+      omniauth (~> 1.0)
     omniauth-oauth (1.0.0)
       oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
     omniauth-twitter (0.0.8)
       omniauth-oauth (~> 1.0)
@@ -219,6 +239,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-will_paginate
   capybara
   coffee-rails (~> 3.2.1)
@@ -237,6 +258,9 @@ DEPENDENCIES
   mongrel (= 1.2.0.pre2)
   mysql2
   newrelic_rpm
+  omniauth-facebook
+  omniauth-google-oauth2
+  omniauth-identity
   omniauth-twitter
   rails (= 3.2.1)
   rspec-rails

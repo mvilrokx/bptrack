@@ -7,14 +7,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 BloodpressureReading.delete_all
-test_user = 1
-text_comment = "This was entered as test data using seed.rb (rake db:seed)."
-100.times do
+50.times do
   BloodpressureReading.create([{
     systolic_pressure: Forgery(:basic).number({:at_least => 100, :at_most => 160}),
      diastolic_pressure: Forgery(:basic).number({:at_least => 50, :at_most => 90}), 
      heart_rate: Forgery(:basic).number({:at_least => 60, :at_most => 160}),
      comment: Forgery(:lorem_ipsum).words(10),
-     user_id: test_user
+     user_id: Forgery(:basic).number({:at_least => 1, :at_most => 10}),
   }])
 end

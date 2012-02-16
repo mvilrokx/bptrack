@@ -1,8 +1,9 @@
 class BloodpressureReadingsController < ApplicationController
   helper_method :sort_column, :sort_direction
+  before_filter :login_required
   
   def index
-  	@bp_readings = BloodpressureReading.page(params[:page]).order(sort_column(BloodpressureReading) + " " + sort_direction)
+  	@bp_readings = current_user.bloodpressure_readings.page(params[:page]).order(sort_column(BloodpressureReading) + " " + sort_direction)
   end
 
   def new
@@ -10,7 +11,7 @@ class BloodpressureReadingsController < ApplicationController
   end
 
   def create
-  	@bp_reading = BloodpressureReading.new(params[:bloodpressure_reading])
+  	@bp_reading = current_user.bloodpressure_readings.new(params[:bloodpressure_reading])
     if @bp_reading.save
       redirect_to bloodpressure_readings_path, :flash => {:success => "Successfully saved BP reading."}
     else
@@ -19,11 +20,11 @@ class BloodpressureReadingsController < ApplicationController
   end
 
   def edit
-    @bp_reading = BloodpressureReading.find(params[:id])
+    @bp_reading = current_user.bloodpressure_readings.find(params[:id])
   end
 
   def update
-    @bp_reading = BloodpressureReading.find(params[:id])    
+    @bp_reading = current_user.bloodpressure_readings.find(params[:id])    
     if @bp_reading.update_attributes(params[:bloodpressure_reading])
       redirect_to bloodpressure_readings_path, :flash => {:success => "Successfully updated BP reading."}
     else
@@ -31,10 +32,8 @@ class BloodpressureReadingsController < ApplicationController
     end
   end
 
-
-
   def destroy
-    @bp_reading = BloodpressureReading.find(params[:id])
+    @bp_reading = current_user.bloodpressure_readings.find(params[:id])
     @bp_reading.destroy
    redirect_to bloodpressure_readings_path, :flash => {:success => "Successfully deleted BP reading."}
   end

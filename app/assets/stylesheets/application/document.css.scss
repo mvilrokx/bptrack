@@ -9,4 +9,5 @@ html {}
 body {}
 #main {
   @include container;
+  min-height: 600px;
 }
