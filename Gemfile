@@ -41,7 +41,7 @@ group :assets do
   gem 'compass_twitter_bootstrap'
   gem 'compass-h5bp'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer'
+  # gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
 
