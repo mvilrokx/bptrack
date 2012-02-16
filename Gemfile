@@ -6,6 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'pg' #needed for Heroku deployment, this requires $ sudo apt-get install libpq-dev
 gem 'awesome_print'
 gem 'newrelic_rpm'
 gem 'haml-rails'

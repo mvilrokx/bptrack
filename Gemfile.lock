@@ -162,6 +162,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.8)
       omniauth-oauth (~> 1.0)
+    pg (0.13.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -262,6 +263,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-identity
   omniauth-twitter
+  pg
   rails (= 3.2.1)
   rspec-rails
   sass-rails (~> 3.2.3)
