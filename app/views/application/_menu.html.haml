@@ -15,7 +15,7 @@
               %b.caret
             %ul.dropdown-menu
               - if logged_in?
-                %li= link_to "Profile", edit_user_path
+                %li= link_to "Profile", edit_user_path(current_user)
                 %li= link_to "Sign Out", signout_path
               - else
                 %li= link_to "Sign In with Twitter", "/auth/twitter"

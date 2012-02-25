@@ -25,7 +25,7 @@
             %a.btn.dropdown-toggle{:data => {:toggle => "dropdown"}, :href => "#"}
               %span.caret
             %ul.dropdown-menu
-              %li= link_to "Edit", edit_bloodpressure_reading_path(bp_reading)
-              %li= link_to "Delete", bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
+              %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading)
+              %li= link_to "<i class='icon-remove'></i> Delete".html_safe, bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
 
 =link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary"

@@ -17,4 +17,5 @@
 //= require bootstrap-button
 //= require bootstrap-transition
 //= require bootstrap-dropdown
+//= require highcharts/highcharts
 //= require_tree .
