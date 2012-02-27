@@ -4,9 +4,9 @@
       .container
         = link_to "BPTrack", root_path, :class => "brand"
         %ul.nav
-          %li= link_to "Home", root_path
+          %li= link_to '<i class="icon-home icon-white"></i> Home'.html_safe, root_path
           - if logged_in?
-            %li= link_to "MyBP", bloodpressure_readings_path
+            %li= link_to '<i class="icon-heart icon-white"></i> MyBP'.html_safe, bloodpressure_readings_path
 
         %ul.nav.pull-right
           %li.dropdown

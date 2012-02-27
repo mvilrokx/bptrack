@@ -17,27 +17,35 @@ $(document).ready(function() {
     },
     yAxis: [{ // Primary yAxis
           title: {
-            text: 'Pressure'
+            text: 'Pressure (in mmHg)'
           },
-          labels: {
-            formatter: function() {
-              return this.value +' mmHg';
-            }
-          }  
+          // labels: {
+          //   formatter: function() {
+          //     return this.value +' mmHg';
+          //   }
+          // }  
         }, { // Secondary yAxis
           title: {
-            text: 'Heartrate'
+            text: 'Heartrate (in bpm)'
           },
-          labels: {
-            formatter: function() {
-              return this.value +' bpm';
-            }
-          },
+          // labels: {
+          //   formatter: function() {
+          //     return this.value +' bpm';
+          //   }
+          // },
           opposite: true
     }],
     tooltip: {
       crosshairs: true,
-      shared: true
+      shared: true,
+      formatter: function() {
+        var tooltip_content = '<b>' + Highcharts.dateFormat('%A, %B %e %Y, %H:%M', this.x) + '</b><br/>';
+        $.each(this.points,  function(index, point) { 
+          tooltip_content += '<span style="color:' + point.series.color + ';">' + point.series.name + '</span>: <b>' + point.y + '</b><br/>';
+        });
+        tooltip_content += '<br/><p>Comment: <em>' + this.points[0].point.name + '</em></p>';
+        return tooltip_content;
+      }
     },
 
     series: [{
@@ -63,27 +71,15 @@ $(document).ready(function() {
         var reading = readings[i];
         var d = Date.parse(reading.recorded_at);
         //alert(d);
-        systolics.push([d, reading.systolic_pressure]);
+        systolics.push({
+          x: d, 
+          y: reading.systolic_pressure,
+          name: reading.comment //stuffing this here so I can show it in tooltip
+        });
         diastolics.push([d, reading.diastolic_pressure]);
         heartrates.push({
           x: d, 
-          y: reading.heart_rate, 
-          events: {
-            click: 
-              function() {
-                hs.htmlExpand(null, {
-                  pageOrigin: {
-                    x: this.pageX,
-                    y: this.pageY
-                  },
-                  headingText: this.series.name,
-                  maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) +':<br/> '+
-                    this.y +' visits',
-                  width: 200
-                });
-              }
-
-          }
+          y: reading.heart_rate
         });
       }
       options.series[0].data = systolics;

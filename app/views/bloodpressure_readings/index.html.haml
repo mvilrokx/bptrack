@@ -1,6 +1,6 @@
 %h2 
   Bloodpressure Readings
-  %span.small= link_to "<i class='icon-signal'></i> Show Chart".html_safe, '#', :id => 'show-chart'
+  %span= link_to "<i class='icon-signal icon-white'></i> Show Chart".html_safe, '#', :id => 'show-chart', :class => 'btn btn-inverse'
 
 #bp-table
   = will_paginate @bp_readings
