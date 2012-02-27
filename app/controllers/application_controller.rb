@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sort_column(object)
-    object.column_names.include?(params[:sort_by]) ? params[:sort_by] : "updated_at"
+    object.column_names.include?(params[:sort_by]) ? params[:sort_by] : "recorded_at"
   end
 
 end

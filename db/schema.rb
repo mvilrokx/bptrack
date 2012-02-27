@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20120216162250) do
     t.integer  "systolic_pressure"
     t.integer  "diastolic_pressure"
     t.integer  "heart_rate"
+    t.datetime "recorded_at"
     t.text     "comment"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

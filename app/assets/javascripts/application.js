@@ -18,4 +18,5 @@
 //= require bootstrap-transition
 //= require bootstrap-dropdown
 //= require highcharts/highcharts
+//= require chart
 //= require_tree .

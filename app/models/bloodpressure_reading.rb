@@ -13,4 +13,5 @@ class BloodpressureReading < ActiveRecord::Base
     :message => "%{value} is not a valid Diastolic Pressure Reading" }
   validates :heart_rate, :inclusion => { :in => 25..250,
     :message => "%{value} is not a valid Heart Rate Reading" }, :allow_blank => true
+
 end

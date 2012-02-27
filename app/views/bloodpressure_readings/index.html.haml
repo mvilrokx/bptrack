@@ -1,31 +1,36 @@
-%h2 Bloodpressure Readings
+%h2 
+  Bloodpressure Readings
+  %span.small= link_to "<i class='icon-signal'></i> Show Chart".html_safe, '#', :id => 'show-chart'
 
-= will_paginate @bp_readings
+#bp-table
+  = will_paginate @bp_readings
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th Systolic
-      %th Diatolic
-      %th Heart Rate
-      %th= sortable @bp_readings, "updated_at", "Date Entered"
-      %th Comment
-      %th Action
-  %tbody
-    - @bp_readings.each do |bp_reading|
-      %tr[bp_reading]
-        %td= bp_reading.systolic_pressure
-        %td= bp_reading.diastolic_pressure
-        %td= bp_reading.heart_rate
-        %td= pretty_date bp_reading.created_at
-        %td= bp_reading.comment
-        %td
-          .btn-group
-            %a.btn{:href => "#"} Action
-            %a.btn.dropdown-toggle{:data => {:toggle => "dropdown"}, :href => "#"}
-              %span.caret
-            %ul.dropdown-menu
-              %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading)
-              %li= link_to "<i class='icon-remove'></i> Delete".html_safe, bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Systolic
+        %th Diatolic
+        %th Heart Rate
+        %th= sortable @bp_readings, "recorded_at", "Date Recorded"
+        %th Comment
+        %th Action
+    %tbody
+      - @bp_readings.each do |bp_reading|
+        %tr[bp_reading]
+          %td= bp_reading.systolic_pressure
+          %td= bp_reading.diastolic_pressure
+          %td= bp_reading.heart_rate
+          %td= pretty_date bp_reading.recorded_at
+          %td= bp_reading.comment
+          %td
+            .btn-group
+              %a.btn{:href => "#"} Action
+              %a.btn.dropdown-toggle{:data => {:toggle => "dropdown"}, :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading)
+                %li= link_to "<i class='icon-remove'></i> Delete".html_safe, bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
 
-=link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary"
+  =link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary"
+
+#bp-chart

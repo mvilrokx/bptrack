@@ -1,9 +1,11 @@
 class BloodpressureReadingsController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_filter :login_required
+  respond_to :html, :json
   
   def index
-  	@bp_readings = current_user.bloodpressure_readings.page(params[:page]).order(sort_column(BloodpressureReading) + " " + sort_direction)
+  	@bp_readings = current_user.bloodpressure_readings.paginate(:page => params[:page], :per_page => params[:per_page]||30).order(sort_column(BloodpressureReading) + " " + sort_direction)
+    respond_with @bp_readings
   end
 
   def new
@@ -35,7 +37,7 @@ class BloodpressureReadingsController < ApplicationController
   def destroy
     @bp_reading = current_user.bloodpressure_readings.find(params[:id])
     @bp_reading.destroy
-   redirect_to bloodpressure_readings_path, :flash => {:success => "Successfully deleted BP reading."}
+    redirect_to bloodpressure_readings_path, :flash => {:success => "Successfully deleted BP reading."}
   end
 
 end

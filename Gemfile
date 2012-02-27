@@ -19,6 +19,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-identity'
+gem 'forgery' # Move to dev when done testing on Heroku
 
 group :test, :development do
   gem 'turn', '< 0.8.3'
@@ -29,7 +30,6 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'guard-rspec'
   gem 'mongrel', '1.2.0.pre2'
-  gem 'forgery'
 end
 
 # Gems used only for assets and not required

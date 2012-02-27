@@ -5,6 +5,7 @@ class CreateBloodpressureReadings < ActiveRecord::Migration
       t.integer :systolic_pressure
       t.integer :diastolic_pressure
       t.integer :heart_rate
+      t.datetime :recorded_at
       t.text :comment
 
       t.timestamps
