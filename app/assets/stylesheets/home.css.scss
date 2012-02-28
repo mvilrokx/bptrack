@@ -1,3 +1,32 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.hero-unit {
+  h2 {
+    margin-bottom: 0;
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  ul {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 27px;
+    list-style-type:none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+    li {
+      margin-top: 1em;
+      &:before {
+        content: "\00BB \0020";
+      }
+    }
+    margin-bottom: 1em;
+  }
+}
+
+.item {
+  @include prepend(2);
+  @include column(20, true);
+}

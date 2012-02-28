@@ -18,6 +18,8 @@
 //= require bootstrap-button
 //= require bootstrap-transition
 //= require bootstrap-dropdown
+//= require bootstrap-tooltip
+//= require bootstrap-carousel
 //= require highcharts/highcharts
 //= require chart
 //= require_tree .
