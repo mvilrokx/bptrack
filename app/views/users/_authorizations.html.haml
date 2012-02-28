@@ -1,11 +1,16 @@
-#authorizations
+#authorizations.hide
+  %legend Authorizations
   %table.table.table-striped[current_user]
     %thead
       %tr
         %th Provider
         %th Action
     %tbody
-      - current_user.authorizations.each do |auth|
-        %tr[auth]
-          %td= auth.provider
-          %td= link_to "Delete", authorization_path(auth), :method => :delete, :confirm => "Are you sure?"
+      -Authorization::SUPPORTED_PROVIDERS.each do |provider, properties|
+        %tr
+          %td= provider
+          %td
+            -if current_user.authorizations.find_by_provider(properties[:auth_name])
+              %td= link_to "Delete", current_user.authorizations.find_by_provider(properties[:auth_name]), :method => :delete, :confirm => "Are you sure?"
+            -else
+              %td= link_to "Add", properties[:auth_link]

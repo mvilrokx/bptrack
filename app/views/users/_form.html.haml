@@ -5,7 +5,7 @@
         %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
         = f.error_notification
 
-    %legend Edit Account
+    %legend Personal Data
     = f.input :user_name, :disabled => true, :hint => 'You cannot change your user name.'
     = f.input :email, :placeholder => 'user@domain.com', :as => :email
     = f.input :first_name

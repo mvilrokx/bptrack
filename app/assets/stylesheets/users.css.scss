@@ -1,3 +1,12 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#left-column {
+  @include column(4);
+  @include colborder;
+  @include prepend-top;
+}
+
+#right-column {
+  @include column(18, true);
+}

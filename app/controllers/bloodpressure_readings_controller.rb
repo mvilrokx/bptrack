@@ -10,6 +10,7 @@ class BloodpressureReadingsController < ApplicationController
 
   def new
   	@bp_reading = BloodpressureReading.new
+    respond_with(@bp_readings, :layout => !request.xhr?)
   end
 
   def create
@@ -23,6 +24,7 @@ class BloodpressureReadingsController < ApplicationController
 
   def edit
     @bp_reading = current_user.bloodpressure_readings.find(params[:id])
+    respond_with(@bp_readings, :layout => !request.xhr?)
   end
 
   def update

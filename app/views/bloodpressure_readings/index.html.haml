@@ -28,9 +28,14 @@
               %a.btn.btn-mini.dropdown-toggle{:data => {:toggle => "dropdown"}, :href => "#"}
                 %span.caret
               %ul.dropdown-menu
-                %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading)
+                %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading), :remote => :true
                 %li= link_to "<i class='icon-trash'></i> Delete".html_safe, bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
 
-  =link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary"
+  =link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary", :remote => true
 
 #bp-chart
+
+.modal.hide.fade#modal-form
+  .modal-header
+    %h3
+  .modal-body

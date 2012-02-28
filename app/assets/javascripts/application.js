@@ -20,6 +20,7 @@
 //= require bootstrap-dropdown
 //= require bootstrap-tooltip
 //= require bootstrap-carousel
+//= require bootstrap-modal
 //= require highcharts/highcharts
 //= require chart
 //= require_tree .

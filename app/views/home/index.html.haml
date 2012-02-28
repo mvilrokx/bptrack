@@ -7,7 +7,7 @@
       %li No more writing down your readings on slips of paper or a calendar.
       %li See your progress on an easy to read graph that you can share with your doctor.
   %p
-    %a.btn.btn-primary.btn-large
+    %a.btn.btn-primary.btn-large{:data => {:toggle => "modal"}, :href => "#my-modal"}
       %i.icon-info-sign.icon-white
       Learn more
 
@@ -26,9 +26,19 @@
   %a.carousel-control.right{:href => "#my-carousel", :data => {:slide => "next"}} &rsaquo;
 
 
-.hero-unit
+.hero-unit#how-it-works
   %h2 How It Works
-  %p
-    %ol
-      %li test
-      %li test
+  %ol
+    %li Login with your existing #{link_to 'Google', '/auth/google_oauth2', {:rel => 'tooltip', :data => {'original-title' => 'click to login with your Google Account'}}}, #{link_to 'Twitter', '/auth/twitter', {:rel => 'tooltip', :data => {'original-title' => 'click to login with your Twitter Account'}}} or #{link_to 'Facebook', '/auth/facebook', {:rel => 'tooltip', :data => {'original-title' => 'click to login with your Facebook Account'}}} account.
+    %li Enter your blood pressure using a web page, text (SMS) or email.
+    %li Print your graph (or bring your smart phone / iPad) and share it with your doctor.
+
+.modal.hide.fade#my-modal
+  .modal-header
+    %a.close{:data => {:dismiss => "modal"}} &times;
+    %h3 Demonstration of bptrack service
+  .modal-body
+    %p
+      %iframe{:width => "540", :height => "315", :src => "http://www.youtube.com/embed/DVSbXO_LoHg", :frameborder => "0"}
+  -# .modal-footer
+    %a.btn{:href => "#", :data => {:dismiss => "modal"}} Close

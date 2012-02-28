@@ -1,1 +1,18 @@
-=render "form"
+#left-column
+  %ul.nav.nav-list
+    %li.nav-header Profile Management
+    %li
+      %a#personal-data{:href => "#"}
+        %i.icon-user
+        Personal Data
+    %li
+      %a#authorizations{:href => "#"}
+        %i.icon-ok-sign
+        Authorizations
+    %li
+      %a#preferences{:href => "#"}
+        %i.icon-cog
+        Preferences
+
+#right-column
+  =render "form"

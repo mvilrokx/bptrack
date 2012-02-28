@@ -13,7 +13,7 @@
     -# = f.input :recorded_at, :as => :string, :input_html => {:class => 'span2 jquery-ui-date', :value => @bp_reading.try(:recorded_at).try(:strftime,'%m/%d/%Y')}
     -# = f.input :recorded_at, :as => :hidden, :input_html => {:id => 'recorded-at-alt'}
     -# = f.input :recorded_at, :as => :time, :ignore_date => true, :input_html => {:class => 'span1'}
-    = f.input :comment, :input_html => { :class => 'span6', :rows => 6 }
+    = f.input :comment, :input_html => { :class => 'span5', :rows => 4 }
 
     .form-actions
       = f.button :submit, :class => 'btn-primary', :disable_with => "Saving...", :value => "Save"
