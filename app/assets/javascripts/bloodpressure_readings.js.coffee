@@ -6,7 +6,7 @@ $ ->
   $("#show-chart").click ->
     $("#bp-table").fadeToggle()
     $("#bp-chart").fadeToggle()
-    label = if $(this).html() == '<i class="icon-signal icon-white"></i> Show Chart' then '<i class="icon-th-list icon-white"></i> Show Table' else '<i class="icon-signal icon-white"></i> Show Chart'
+    label = if $(this).html() == '<i class="icon-signal icon-white"></i> Show Graph' then '<i class="icon-th-list icon-white"></i> Show Table' else '<i class="icon-signal icon-white"></i> Show Graph'
     $(this).html(label)
 
   $(".jquery-ui-date").datepicker(
