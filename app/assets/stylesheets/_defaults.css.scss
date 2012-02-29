@@ -25,9 +25,16 @@ $color-5: #EAEEEA;
 $color-6: #3291B1;
 
 // Grid --------------------------------------------------------------
+// Elastic Grid
 $total-cols: 12;
 $col-width: 5em;
 $gutter-width: 1em;
 $side-gutter-width: $gutter-width;
+
+//Fluid Grid
+// $total-cols: 12;
+// $col-width: 6%;
+// $gutter-width: 1%;
+// $side-gutter-width: 8%;
 
 $show-grid-backgrounds  : false;
