@@ -37,18 +37,18 @@
 
 #how-it-works {
   @include full;
-  ol {
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 27px;
-    margin-left: 0;
-    padding-left: 1em;
-    @include clearfix;
-//    text-indent: -1em;
-    li {
-      width: 27%;
-      margin-left: 30px;
-      float: left;      
-    }
+  h1 {
+    @include full($total-cols);
+    font-size: 40px;
+  }
+  #step-1 {
+    @include columns($total-cols/3,$total-cols);
+  }
+  #step-2 {
+    @include columns($total-cols/3,$total-cols);
+  }
+  #step-3 {
+    @include columns($total-cols/3,$total-cols);
+    @include omega($total-cols);
   }
 }
