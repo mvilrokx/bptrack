@@ -7,7 +7,14 @@
 //-----------------------------------------
 html {}
 body {}
-#main {
+
+.container {
   @include container;
+  @include susy-grid-background;
+}
+
+#main {
+  @extend .container;
   min-height: 600px;
 }
+

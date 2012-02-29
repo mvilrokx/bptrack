@@ -9,8 +9,7 @@
       -Authorization::SUPPORTED_PROVIDERS.each do |provider, properties|
         %tr
           %td= provider
-          %td
-            -if current_user.authorizations.find_by_provider(properties[:auth_name])
-              %td= link_to "Delete", current_user.authorizations.find_by_provider(properties[:auth_name]), :method => :delete, :confirm => "Are you sure?"
-            -else
-              %td= link_to "Add", properties[:auth_link]
+          -if current_user.authorizations.find_by_provider(properties[:auth_name])
+            %td= link_to "Delete", current_user.authorizations.find_by_provider(properties[:auth_name]), :method => :delete, :confirm => "Are you sure?"
+          -else
+            %td= link_to "Add", properties[:auth_link]

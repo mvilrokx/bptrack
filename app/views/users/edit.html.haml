@@ -1,4 +1,4 @@
-#left-column
+%nav.profile
   %ul.nav.nav-list
     %li.nav-header Profile Management
     %li
@@ -14,5 +14,7 @@
         %i.icon-cog
         Preferences
 
-#right-column
-  =render "form"
+#profile-content
+  = render "form"
+
+  = render "authorizations"  

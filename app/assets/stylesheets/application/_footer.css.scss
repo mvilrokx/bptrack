@@ -4,4 +4,7 @@ footer {
   text-align: center;
   margin-top: 30px;
   padding:30px;
+  .copyright {
+    @include full;
+  }
 }

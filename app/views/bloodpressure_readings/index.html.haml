@@ -1,6 +1,8 @@
 %h2 
   Bloodpressure Readings
-  %span= link_to "<i class='icon-signal icon-white'></i> Show Chart".html_safe, '#', :id => 'show-chart', :class => 'btn btn-inverse'
+  = link_to "<i class='icon-signal icon-white'></i> Show Graph".html_safe, '#', :id => 'show-chart', :class => 'btn btn-inverse'
+  =link_to "Add BP", new_bloodpressure_reading_path, :class => "btn btn-primary", :remote => true
+
 
 #bp-table
   = will_paginate @bp_readings
@@ -31,7 +33,7 @@
                 %li= link_to "<i class='icon-pencil'></i> Edit".html_safe, edit_bloodpressure_reading_path(bp_reading), :remote => :true
                 %li= link_to "<i class='icon-trash'></i> Delete".html_safe, bloodpressure_reading_path(bp_reading), :method => :delete, :confirm => "Are you sure?"
 
-  =link_to "Create", new_bloodpressure_reading_path, :class => "btn btn-primary", :remote => true
+  =link_to "Add BP", new_bloodpressure_reading_path, :class => "btn btn-primary", :remote => true
 
 #bp-chart
 

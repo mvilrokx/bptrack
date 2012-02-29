@@ -23,3 +23,11 @@ $color-3: #8A9875;
 $color-4: #34626B;
 $color-5: #EAEEEA;
 $color-6: #3291B1;
+
+// Grid --------------------------------------------------------------
+$total-cols: 12;
+$col-width: 5em;
+$gutter-width: 1em;
+$side-gutter-width: $gutter-width;
+
+$show-grid-backgrounds  : false;
