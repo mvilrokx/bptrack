@@ -64,5 +64,8 @@ module Bptrack
     #
     # config.assets.initialize_on_precompile = false 
     config.assets.precompile += %w( polyfills.js )
+
+    # Added by Mark Vilrokx to allow cache management of status pages
+    config.git_revision = `git rev-parse HEAD 2>/dev/null`.to_s.strip
   end
 end
