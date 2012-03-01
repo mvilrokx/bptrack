@@ -11,8 +11,8 @@
     %thead
       %tr
         %th Systolic
-        %th Diatolic
-        %th Heart Rate
+        %th Diastolic
+        %th= 'Heart Rate' if current_user.record_heartrate?
         %th= sortable @bp_readings, "recorded_at", "Date Recorded"
         %th Comment
         %th Action
@@ -21,7 +21,7 @@
         %tr[bp_reading]
           %td= bp_reading.systolic_pressure
           %td= bp_reading.diastolic_pressure
-          %td= bp_reading.heart_rate
+          %td= bp_reading.heart_rate if current_user.record_heartrate?
           %td= pretty_date bp_reading.recorded_at
           %td= bp_reading.comment
           %td

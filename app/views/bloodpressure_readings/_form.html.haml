@@ -8,7 +8,7 @@
     %legend #{@bp_reading.new_record? ? "Create" : "Edit"} Bloodpressure Reading
     = f.input :systolic_pressure, :placeholder => 'e.g. 115'
     = f.input :diastolic_pressure, :placeholder => 'e.g. 75'
-    = f.input :heart_rate
+    = f.input :heart_rate if current_user.record_heartrate?
     = f.input :recorded_at, :use_short_month => true, :order => [:month, :day, :year], :input_html => {:class => 'span1'}
     -# = f.input :recorded_at, :as => :string, :input_html => {:class => 'span2 jquery-ui-date', :value => @bp_reading.try(:recorded_at).try(:strftime,'%m/%d/%Y')}
     -# = f.input :recorded_at, :as => :hidden, :input_html => {:id => 'recorded-at-alt'}

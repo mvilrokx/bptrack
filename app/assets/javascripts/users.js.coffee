@@ -5,6 +5,12 @@ $ ->
   $("a#personal-data").click ->
     $(".form.user").show()
     $("div#authorizations").hide()
+    $("div#preferences").hide()
   $("a#authorizations").click ->
     $(".form.user").hide()
     $("div#authorizations").show()
+    $("div#preferences").hide()
+  $("a#preferences").click ->
+    $(".form.user").hide()
+    $("div#authorizations").hide()
+    $("div#preferences").show()

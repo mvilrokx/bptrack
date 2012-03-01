@@ -1,0 +1,15 @@
+#preferences.hide
+  = simple_form_for current_user, :html => {:class => 'form-horizontal'}, :defaults => {:input_html => {:class => 'span2'}} do |f|
+    - if f.error_notification
+      .alert.alert-error.fade.in
+        %a.close{:data => {:dismiss => "alert"}, :href => "#"} &times;
+        = f.error_notification
+
+    %legend Preferences
+    = f.input :target_systolic
+    = f.input :target_diastolic
+    = f.input :record_heartrate, :as => :boolean
+
+    .form-actions
+      = f.button :submit, :class => 'btn-primary', :disable_with => "Saving...", :value => "Save"
+      = link_to 'Cancel', bloodpressure_readings_path, :class => "btn btn-danger"
