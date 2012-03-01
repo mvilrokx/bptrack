@@ -10,11 +10,13 @@ body {}
 
 .container {
   @include container;
-  @include susy-grid-background;
 }
 
 #main {
   @extend .container;
-  min-height: 600px;
+  min-height: 601px;
+  &:target {
+    @include susy-grid-background;
+  }
 }
 

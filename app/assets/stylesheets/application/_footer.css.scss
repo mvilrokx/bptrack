@@ -1,9 +1,18 @@
 footer {
-  background: $color-4;
-  color: #fff;
-  text-align: center;
+  background: $color-5;
   margin-top: 30px;
   padding:30px;
+  .social-links {
+    @include columns(4);
+    @include alpha;
+  }
+  .terms-of-service {
+    @include columns(4);
+  }
+  .contact-info {
+    @include columns(4);
+    @include omega;
+  }
   .copyright {
     @include full;
   }

@@ -1,4 +1,40 @@
-%footer#footer
+%footer.footer
   .container
-    %small.copyright
-      Bptrack, Copyright &copy; #{ Date.today.year }
+    .social-links
+      %h4 Social Media
+      %p
+      %ul.unstyled
+        %li
+          %a.twitter-share-button{:href => "https://twitter.com/share", :data => {:via => "bpgraph", :text => "I am tracking my blood pressure with bpgraph.com and I love it!", :hashtags => "bptracking"}} Tweet
+        %li
+          %a.twitter-follow-button{:href => "https://twitter.com/bpgraph"} Follow @bptrack
+        %li
+          .fb-like{:data => {:href => "http://bpgraph.com", :send => "true", :width => "280", "show-faces" => "false", :font => "arial"}}
+
+    .contact-info
+      %h4 Contact Us
+      %p
+      %a{:href => 'mailto:bptracker@gmail.com'} BPTrack
+
+    .terms-of-service
+      %h4 Legal Stuff
+      %p
+      =link_to 'Terms of Service', '#'
+
+    .copyright
+      %p.pull-right
+        %small
+          Bptrack LLC, Copyright &copy; #{ Date.today.year }
+
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=323519861017545";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
