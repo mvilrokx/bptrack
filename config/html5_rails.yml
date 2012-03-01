@@ -10,7 +10,7 @@
 # e.g. ENV['google_account_id'] || yml[:google_account_id]
 
 defaults: &defaults
-  :google_account_id: ""  # Google Analytics
+  :google_account_id: "UA-15389445-4"  # Google Analytics
   :google_api_key:    ""  # Google APIs
 
 :development:
