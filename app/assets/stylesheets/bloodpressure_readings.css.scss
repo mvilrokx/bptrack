@@ -11,5 +11,7 @@ h2 {
 
 #bp-chart {
   @include full;
+  width: 100%;
+  height: 600px;
 }
 

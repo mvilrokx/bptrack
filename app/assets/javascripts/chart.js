@@ -6,7 +6,7 @@ $(document).ready(function() {
       renderTo: 'bp-chart',
       type: 'spline',
       zoomType: 'x',
-      width: 960,
+      //width: 960,
       height: 600
     },
     title: {
