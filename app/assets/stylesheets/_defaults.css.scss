@@ -38,3 +38,21 @@ $side-gutter-width: $gutter-width;
 // $side-gutter-width: 8%;
 
 $show-grid-backgrounds  : true;
+
+// Site Colors
+$van-gogh-blue:  #3789B9 !default;
+$van-gogh-green: #86A52D !default;
+
+//Overriding Twitter bootstrap variables
+$blue: $van-gogh-blue;
+$green: $van-gogh-green;
+
+$linkColor: $van-gogh-blue;
+$linkColorHover: darken($linkColor, 15%);
+
+$navbarBackground: $van-gogh-blue;
+$navbarBackgroundHighlight: lighten($navbarBackground, 10%);
+$navbarLinkColorHover: #FFF;
+$navbarLinkBackgroundHover: $navbarBackgroundHighlight;
+$navbarText: darken($navbarLinkColorHover, 10%);
+$navbarLinkColor: $navbarText;
