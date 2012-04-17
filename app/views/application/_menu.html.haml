@@ -21,3 +21,6 @@
                 %li= link_to "Sign In with Twitter", "/auth/twitter"
                 %li= link_to "Sign In with Facebook", "/auth/facebook"
                 %li= link_to "Sign In with Google", "/auth/google_oauth2"
+                %li.divider
+                %li=link_to "By signing in you are agreeing<br>to these terms and conditions.".html_safe, '/terms_of_service'
+            

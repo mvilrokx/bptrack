@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   store :preferences, accessors: [ :target_systolic, :target_diastolic, :record_heartrate ]
 
+  before_save :default_values
+
   validates :email, 
     :format => {:with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i, :message => "Invalid email address." }, 
     :uniqueness => true,
@@ -16,5 +18,10 @@ class User < ActiveRecord::Base
   def record_heartrate?
     record_heartrate != '0'
   end
+
+  private
+    def default_values
+      self.record_heartrate ||= "1"
+    end
 
 end
