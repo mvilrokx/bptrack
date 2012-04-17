@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/vwall/compass-twitter-bootstrap.git
+  revision: 1a7b5ce54efaf764eb317127521f7630964a3da7
+  specs:
+    compass_twitter_bootstrap (2.0.1.2)
+      compass
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,8 +70,6 @@ GEM
       compass (~> 0.12.0)
     compass-susy-plugin (0.9)
       compass (>= 0.11.1)
-    compass_twitter_bootstrap (2.0.1.2)
-      compass
     country_select (0.0.2)
     cucumber (1.1.9)
       builder (>= 2.1.2)
@@ -246,7 +251,7 @@ DEPENDENCIES
   compass-h5bp
   compass-rails
   compass-susy-plugin
-  compass_twitter_bootstrap
+  compass_twitter_bootstrap!
   country_select
   cucumber-rails
   database_cleaner

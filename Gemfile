@@ -38,7 +38,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
-  gem 'compass_twitter_bootstrap'
+  # gem 'compass_twitter_bootstrap'
+  gem "compass_twitter_bootstrap", :git => "https://github.com/vwall/compass-twitter-bootstrap.git"
   gem 'compass-susy-plugin', :require => 'susy'
   gem 'compass-h5bp'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
