@@ -22,4 +22,8 @@ $ ->
       $('#modal-form').modal('show')
     )
   else
+    # remove remote calls
     $('.btn[data-remote], a[data-remote]').removeAttr("data-remote")
+    # make forms (twitter bootstrap) vertical
+    $('form.form-horizontal').removeClass("form-horizontal")
+
