@@ -14,9 +14,12 @@ $ ->
     altFormat: "yy-mm-d"
   )
 
-  $('.btn[data-remote], a[data-remote]').bind('ajax:success', (evt, data, status, xhr) -> 
-    $('.modal-body').append(xhr.responseText)
-    $('.modal-header h3').text($('.modal-body').find('legend').text())
-    $('.modal-body').find('legend').remove()
-    $('#modal-form').modal('show')
-  )
+  unless $.browser.mobile
+    $('.btn[data-remote], a[data-remote]').bind('ajax:success', (evt, data, status, xhr) -> 
+      $('.modal-body').append(xhr.responseText)
+      $('.modal-header h3').text($('.modal-body').find('legend').text())
+      $('.modal-body').find('legend').remove()
+      $('#modal-form').modal('show')
+    )
+  else
+    $('.btn[data-remote], a[data-remote]').removeAttr("data-remote")
