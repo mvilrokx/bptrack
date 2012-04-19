@@ -23,4 +23,5 @@
 //= require bootstrap-modal
 //= require highcharts/highcharts
 //= require chart
+//= require detectmobilebrowser
 //= require_tree .
